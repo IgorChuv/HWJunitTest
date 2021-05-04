@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ContactsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:49:51" hostname="DESKTOP-LQ5TKJ3" time="0.03">
+  <properties/>
+  <testcase name="addContact_validArgument_success()" classname="ContactsTest" time="0.02"/>
+  <testcase name="addContact_notValidArgument_success()" classname="ContactsTest" time="0.005"/>
+  <testcase name="addContact_argumentsEquals_success()" classname="ContactsTest" time="0.003"/>
+  <system-out><![CDATA[РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕРЅС‚Р°РєС‚Р°
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
