@@ -1,5 +1,3 @@
-
-
 public enum Group {
     WORK("Работа"),
     FRIENDS("Друзья"),

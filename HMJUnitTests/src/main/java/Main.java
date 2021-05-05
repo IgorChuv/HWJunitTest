@@ -1,15 +1,11 @@
-
 import java.util.*;
 import java.time.*;
 public class Main {
 
-    public static LocalDateTime date ;
-    public static Scanner scanner = new Scanner(System.in);
-
-    public static Contacts phoneContacts  = new Contacts();
-    public static MissedCalls missedCalls = new MissedCalls();
-
     public static void main(String[] args){
+        Contacts phoneContacts  = new Contacts();
+        MissedCalls missedCalls = new MissedCalls();
+        Scanner scanner = new Scanner(System.in);
 
         System.out.printf("%40s","Программа: пропущенные вызовы.\n");
         while(true) {
@@ -46,22 +42,22 @@ public class Main {
                     }
 
                     Contact contact = new Contact(sp[0],sp[1],sp[2],groupName);
-                    Contacts.addContact(contact);
+                    phoneContacts.addContact(contact);
                     System.out.println("\nnНовый контакт добавлен\n");
                     break;
                 case 2:
                     System.out.println("Добавьте номер пропущенного вызова");
                     scanner.nextLine();
                     String missContact = scanner.nextLine();
-                    LocalDateTime local = date.now();
-                    MissedCalls.addCall(local.now(), missContact);
+                    LocalDateTime local = LocalDateTime.now();
+                    missedCalls.addCall(local, missContact);
                     System.out.println("Вызов добавлен в пропущенные");
                     break;
                 case 3:
-                    MissedCalls.printAll(phoneContacts);
+                    missedCalls.printAll(phoneContacts);
                     break;
                 case 4:
-                    MissedCalls.clearAllContacts();
+                    missedCalls.clearAllContacts();
                     break;
             }
         }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MissedCallsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-05T06:16:48" hostname="DESKTOP-LQ5TKJ3" time="0.044">
+  <properties/>
+  <testcase name="clearAllContacts_mapIsEmpty_success()" classname="MissedCallsTest" time="0.037"/>
+  <testcase name="addCall_validArgument_success()" classname="MissedCallsTest" time="0.002"/>
+  <testcase name="addCall_nullArgument_throwsException()" classname="MissedCallsTest" time="0.003"/>
+  <system-out><![CDATA[
+Р’СЃРµ РїСЂРѕРїСѓС‰РµРЅРЅС‹Р№ РІС‹Р·РѕРІС‹ СѓРґР°Р»РµРЅС‹.
+
+РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ РїСЂРѕРїСѓС‰РµРЅРЅРѕРіРѕ РІС‹Р·РѕРІР°
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

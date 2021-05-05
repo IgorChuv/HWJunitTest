@@ -1,19 +1,20 @@
-
-
 import java.time.*;
 import java.util.*;
 
 public class MissedCalls{
-    public static Map<String, LocalDateTime> missedCalls = new TreeMap<>();
+    public Map<String, LocalDateTime> missedCalls = new TreeMap<>();
 
-    public static void addCall(LocalDateTime date, String call){
-
-        missedCalls.put(call, date);
+    public void addCall(LocalDateTime date, String call){
+        if(call==null){
+            System.out.println("Ошибка добавления пропущенного вызова");
+        }else{
+            this.missedCalls.put(call, date);
+        }
     }
 
-   public static void printAll(Contacts contacts){
+   public void printAll(Contacts contacts){
        System.out.println("\nПропущенные вызовы:\n");
-        if(missedCalls.isEmpty()){
+        if(this.missedCalls.isEmpty()){
             System.out.println("Список пропущенных вызовов пуст.\n");
         }
         for (Map.Entry<String, LocalDateTime> entry : missedCalls.entrySet()){
@@ -28,8 +29,8 @@ public class MissedCalls{
         }
     }
 
-    public static void clearAllContacts(){
+    public void clearAllContacts(){
         System.out.println("\nВсе пропущенный вызовы удалены.\n");
-        missedCalls.clear();
+        this.missedCalls.clear();
     }
 }

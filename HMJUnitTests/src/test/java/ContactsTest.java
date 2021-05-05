@@ -2,14 +2,16 @@ import org.junit.jupiter.api.Assertions;
 
 public class ContactsTest {
 
+    private final Contacts phoneContacts  = new Contacts();
+
     @org.junit.jupiter.api.Test
     public void addContact_validArgument_success() {
         final Contact contact = new Contact("Name", "Surname", "+79345696708", "Group");
 
-        Contacts.addContact(contact);
+        phoneContacts.addContact(contact);
 
-        final boolean keyResult = Contacts.contacts.containsKey(contact.getPhone());
-        final boolean valueResult = Contacts.contacts.containsValue(contact);
+        final boolean keyResult = phoneContacts.contacts.containsKey(contact.getPhone());
+        final boolean valueResult = phoneContacts.contacts.containsValue(contact);
         Assertions.assertTrue(keyResult);
         Assertions.assertTrue(valueResult);
 
@@ -18,10 +20,10 @@ public class ContactsTest {
     public void addContact_notValidArgument_success() {
         final Contact contact = new Contact(null, null, null, null);
 
-        Contacts.addContact(contact);
+        phoneContacts.addContact(contact);
 
-        final boolean keyResult = Contacts.contacts.containsKey(contact.getPhone());
-        final boolean valueResult = Contacts.contacts.containsValue(contact);
+        final boolean keyResult = phoneContacts.contacts.containsKey(contact.getPhone());
+        final boolean valueResult = phoneContacts.contacts.containsValue(contact);
 
         Assertions.assertFalse(keyResult);
         Assertions.assertFalse(valueResult);
@@ -31,9 +33,9 @@ public class ContactsTest {
     public void addContact_argumentsEquals_success() {
         final Contact contact = new Contact("Name", "Surname", "+79345696708", "Group");
 
-        Contacts.addContact(contact);
-        
-        final Contact result = Contacts.contacts.get(contact.getPhone());
+        phoneContacts.addContact(contact);
+
+        final Contact result = phoneContacts.contacts.get(contact.getPhone());
 
         Assertions.assertEquals(contact, result);
 
